@@ -10,6 +10,9 @@ html, body{
     padding:0;
     box-sizing: border-box;
     -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
     height:100%;
     width:100%;
     overflow-x: hidden
@@ -142,6 +145,7 @@ html, body{
     opacity: 0.9;
     z-index: -1;
     overflow:hidden;
+    margin:0 -1%;
 }
 #banner-info{
     position: absolute;
@@ -173,6 +177,10 @@ html, body{
     justify-content: center;
     align-items: center;
     border-top:black solid 2px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
 }
 .categories-head{
     text-align: center;
@@ -255,6 +263,10 @@ hr{
     background-color:#d8d8d8;
     padding:5% 10%;
     border-top:#999 solid 2px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
 }
 .second img{
     border-radius: 5px;
@@ -302,6 +314,10 @@ hr{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
 }
 .third h1{
     font-family: 'Scope One', serif;
@@ -316,6 +332,10 @@ hr{
     background-color:#d8d8d8;
     padding:5% 10%;
     border-top:#999 solid 2px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
 }
 .last h1{
     text-align: center;
@@ -358,4 +378,105 @@ footer{
     background-color:#041a31;
     padding:20px;
     text-align: center;
+    overflow: hidden;
+}
+@media (min-width: 400px) and (max-width: 767px) {
+    .sliding-navbar{
+       left:-100%;
+    height: 100vh;
+    width: 90%; 
+    }
+    .sliding-navbar--open{
+        left:0;
+    }
+    .banner img{
+        position:relative;
+        height:75vh;
+        width:100vw;
+        margin:0 -5%;
+        -webkit-box-sizing:border-box;
+        z-index: -2;
+        display: none;
+    }
+    .banner{
+        height:auto;
+        width:100%;
+        z-index: -2;
+        background-image: url(/images/lady.jpg);
+        background-size: cover;
+    }
+    #banner-info{
+        position:relative;
+        font-family: 'Playfair Display', serif;
+        text-shadow: 2px 2px 4px #000;
+        color:white;
+        z-index: 0;
+        width:100%;
+        text-align: center;
+        top:0%;
+        left:0%;
+        transform: translate(0,0);
+    }
+    #banner-info h1, #banner-info h2, #banner-info p{
+        font-size:20px;
+        margin:0px 0;
+        padding:50px;
+    }
+    #banner-info p{
+        font-size:20px;
+    }
+    .categories h1, .categories h2{
+        font-size:20px;
+    }
+    .box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    }
+    #card{
+        width:90%;
+        height:300px;
+        padding:10px 10px;
+    }
+    .second h1, .second h2{
+        font-size: 20px;
+    }
+    #information{
+        padding:20px 0;
+    }
+    #information p{
+        font-size:18px;
+        line-height:1.5;
+        text-align: center;
+    }
+    .third{
+        height:200px;
+    }
+    .third h1, .third h2{
+        font-size:20px;
+    }
+    .last h1{
+        font-size:20px;
+    }
+    .last p{
+        font-size:18px;
+        line-height: 1.5;
+    }
+    .last li{
+        padding:5px 0;
+        font-size:18px;
+    }
+    footer{
+        font-size:12px;
+        overflow: hidden;
+    }
+    .brand{
+        font-size:20px;
+    }
+    .navbar--item{
+        font-size:18px;
+        margin:10px 0; 
+    }
 }
