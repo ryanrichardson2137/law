@@ -22,7 +22,15 @@ html, body{
     padding:0;
 }
 /* Navbar Section */
-
+#bar{
+    width:100%;
+    position:fixed;
+    background-color:white;
+    height:80px;
+    border-bottom:solid gold 2px;
+    z-index: 2;
+    display:none;
+}
 .sliding-navbar{
     position: fixed;
     top:0;
@@ -64,6 +72,14 @@ html, body{
 .brand:hover{
     color: gold;
     text-decoration: none;
+}
+navbar a{
+    color:white;
+}
+navbar a:hover{
+    color:gold;
+    text-decoration: none;
+    transition:0.3s;
 }
 .navbar--items{
     list-style-type: none;
@@ -192,12 +208,10 @@ html, body{
 .categories-head h1{
     font-size:36px;
     font-family: 'Scope One', serif;
-    text-shadow: 1px 1px #333;
 }
 .categories-head h2{
     font-size:36px;
     font-family: 'Work Sans', sans-serif;
-    text-shadow: 1px 1px #333;
 }
 .box{
     display: flex;
@@ -283,11 +297,10 @@ hr{
 }
 .second h2{
     text-align: center;
-    font-size:26px;
+    font-size:28px;
     color:#3e5c7c;
     line-height: 2;
     font-family: 'Work Sans', sans-serif;
-    text-shadow: 1px 1px #333;
 }
 .second h1{
     text-align: center;
@@ -295,7 +308,6 @@ hr{
     color:#3e5c7c;
     padding-bottom:4%;
     font-family: 'Scope One', serif;
-    text-shadow: 1px 1px #333;
 }
 .second p{
     font-size:22px;
@@ -304,7 +316,7 @@ hr{
 }
 .third{
     width:100vw;
-    height:35%;
+    height:250px;
     background-color:white;
     color:#3e5c7c;
     border-top:#999 solid 2px;
@@ -321,11 +333,9 @@ hr{
 }
 .third h1{
     font-family: 'Scope One', serif;
-    text-shadow: 1px 1px #333;
 }
 .third h2{
     font-family: 'Work Sans', sans-serif;
-    text-shadow: 1px 1px #333;
 }
 .last{
     width:100vw;
@@ -336,6 +346,7 @@ hr{
     -moz-box-sizing:border-box;
     -o-box-sizing:border-box;
     -ms-box-sizing:border-box;
+    overflow-x: hidden;
 }
 .last h1{
     text-align: center;
@@ -343,7 +354,6 @@ hr{
     color:#3e5c7c;
     padding-bottom:4%;
     font-family: 'Scope One', serif;
-    text-shadow: 1px 1px #333;
 }
 .last p{
     font-size:22px;
@@ -357,6 +367,9 @@ hr{
     font-family: 'Scope One', serif;
     font-style: italic;
     list-style-type:none;
+    border:gold solid 1px;
+    padding:10px;
+    background-color:white;
 }
 .last img{
     border-radius: 5px;
@@ -380,7 +393,8 @@ footer{
     text-align: center;
     overflow: hidden;
 }
-@media (min-width: 400px) and (max-width: 767px) {
+@media only screen and (min-width: 361px)
+    and (max-width: 812px){
     .sliding-navbar{
        left:-100%;
     height: 100vh;
@@ -389,8 +403,11 @@ footer{
     .sliding-navbar--open{
         left:0;
     }
+    #bar{
+        display: block;        
+    }
     .banner img{
-        position:relative;
+        position:static;
         height:75vh;
         width:100vw;
         margin:0 -5%;
@@ -399,11 +416,16 @@ footer{
         display: none;
     }
     .banner{
-        height:auto;
+        position: relative;
+        height:550px;
         width:100%;
-        z-index: -2;
-        background-image: url(/images/lady.jpg);
+        z-index: 0;
+        top:0px;
+        background-image: url(/images/ladysmall.jpg);
         background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-color:#041a31;
     }
     #banner-info{
         position:relative;
@@ -413,20 +435,21 @@ footer{
         z-index: 0;
         width:100%;
         text-align: center;
-        top:0%;
+        top:80px;
         left:0%;
         transform: translate(0,0);
     }
     #banner-info h1, #banner-info h2, #banner-info p{
-        font-size:20px;
+        font-size:26px;
         margin:0px 0;
         padding:50px;
     }
     #banner-info p{
-        font-size:20px;
+        font-size:26px;
     }
     .categories h1, .categories h2{
-        font-size:20px;
+        font-size:26px;
+        text-shadow: none;
     }
     .box{
     display: flex;
@@ -441,7 +464,8 @@ footer{
         padding:10px 10px;
     }
     .second h1, .second h2{
-        font-size: 20px;
+        font-size: 24px;
+        text-shadow:none;
     }
     #information{
         padding:20px 0;
@@ -455,14 +479,17 @@ footer{
         height:200px;
     }
     .third h1, .third h2{
-        font-size:20px;
+        font-size:26px;
+        text-shadow:none;
     }
     .last h1{
-        font-size:20px;
+        font-size:26px;
+        text-shadow: none;
     }
     .last p{
         font-size:18px;
         line-height: 1.5;
+        text-align: center;
     }
     .last li{
         padding:5px 0;
@@ -478,5 +505,248 @@ footer{
     .navbar--item{
         font-size:18px;
         margin:10px 0; 
+    }
+    .second{
+        width:105vw;
+    }
+    .last{
+        width:105vw;        
+    }
+}
+@media only screen and (min-device-width: 361px)
+    and (max-device-width: 812px){
+    #bar{
+        display: block;
+    }
+    .sliding-navbar{
+    left:-100%;
+    height: 100vh;
+    width: 90%; 
+    }
+    .sliding-navbar--open{
+        left:0;
+    }
+    .banner img{
+        position:relative;
+        height:75vh;
+        width:100vw;
+        margin:0 -5%;
+        -webkit-box-sizing:border-box;
+        z-index: -2;
+        display:none;
+    }
+    .banner{
+        position: relative;
+        height:550px;
+        width:100%;
+        z-index: 0;
+        top:0px;
+        background-image: url(/images/ladysmall.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-color:#041a31;
+    }
+    #banner-info{
+        position:relative;
+        font-family: 'Playfair Display', serif;
+        text-shadow: 2px 2px 4px #000;
+        color:white;
+        z-index: 0;
+        width:100%;
+        text-align: center;
+        top:80px;
+        left:0%;
+        transform: translate(0,0);
+    }
+    #banner-info h1, #banner-info h2, #banner-info p{
+        font-size:26px;
+        margin:0px 0;
+        padding:50px;
+    }
+    #banner-info p{
+        font-size:20px;
+    }
+    .categories h1, .categories h2{
+        font-size:26px;
+        text-shadow: none;
+    }
+    .box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    }
+    #card{
+        width:90%;
+        height:300px;
+        padding:10px 10px;
+    }
+    .second h1, .second h2{
+        font-size: 26px;
+        text-shadow: none;
+    }
+    #information{
+        padding:20px 0;
+    }
+    #information p{
+        font-size:18px;
+        line-height:1.5;
+        text-align: center;
+    }
+    .third{
+        height:200px;
+    }
+    .third h1, .third h2{
+        font-size:26px;
+        text-shadow: none;
+    }
+    .last h1{
+        font-size:26px;
+    }
+    .last p{
+        font-size:18px;
+        line-height: 1.5;
+        text-align: center;
+    }
+    .last li{
+        padding:5px 0;
+        font-size:18px;
+    }
+    footer{
+        font-size:12px;
+        overflow: hidden;
+    }
+    .brand{
+        font-size:20px;
+    }
+    .navbar--item{
+        font-size:18px;
+        margin:10px 0; 
+    }
+    .second{
+        width:105vw;        
+    }
+    .last{
+        width:105vw;        
+    }
+}
+@media only screen and (max-width:360px){
+    #bar{
+        display: block;
+    }
+    .sliding-navbar{
+    left:-100%;
+    height: 100vh;
+    width: 90%; 
+    }
+    .sliding-navbar--open{
+        left:0;
+    }
+    .banner img{
+        position:relative;
+        height:75vh;
+        width:100vw;
+        margin:0 -5%;
+        -webkit-box-sizing:border-box;
+        z-index: -2;
+        display:none;
+    }
+    .banner{
+        position: relative;
+        height:550px;
+        width:100%;
+        z-index: 0;
+        top:0px;
+        background-image: url(/images/ladysmall.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-color:#041a31;
+    }
+    #banner-info{
+        position:relative;
+        font-family: 'Playfair Display', serif;
+        text-shadow: 2px 2px 4px #000;
+        color:white;
+        z-index: 0;
+        width:100%;
+        text-align: center;
+        top:80px;
+        left:0%;
+        transform: translate(0,0);
+    }
+    #banner-info h1, #banner-info h2, #banner-info p{
+        font-size:22px;
+        margin:0px 0;
+        padding:40px;
+    }
+    #banner-info p{
+        font-size:20px;
+    }
+    .categories h1, .categories h2{
+        font-size:26px;
+        text-shadow: none;
+    }
+    .box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    }
+    #card{
+        width:90%;
+        height:300px;
+        padding:10px 10px;
+    }
+    .second h1, .second h2{
+        font-size: 26px;
+        text-shadow: none;
+    }
+    #information{
+        padding:20px 0;
+    }
+    #information p{
+        font-size:18px;
+        line-height:1.5;
+        text-align: center;
+    }
+    .third{
+        height:200px;
+    }
+    .third h1, .third h2{
+        font-size:26px;
+        text-shadow: none;
+    }
+    .last h1{
+        font-size:26px;
+    }
+    .last p{
+        font-size:18px;
+        line-height: 1.5;
+        text-align: center;
+    }
+    .last li{
+        padding:5px 0;
+        font-size:18px;
+    }
+    footer{
+        font-size:12px;
+        overflow: hidden;
+    }
+    .brand{
+        font-size:20px;
+    }
+    .navbar--item{
+        font-size:18px;
+        margin:10px 0; 
+    }
+    .second{
+        width:105vw;        
+    }
+    .last{
+        width:105vw;        
     }
 }
